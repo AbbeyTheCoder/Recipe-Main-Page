@@ -138,5 +138,8 @@ table tr:last-child td {
   main {
     max-width: 600px;
     padding: 12px;
+    & img {
+      border-radius: 10px;
+    }
   }
 }
