@@ -1,0 +1,142 @@
+@font-face {
+  font-family: Young-Serif;
+  src: url("Assets/fonts/young-serif/YoungSerif-Regular.ttf");
+}
+@font-face {
+  font-family: Outfit;
+  src: url("Assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+}
+body {
+  height: 100%;
+  background-color: hsl(30, 54%, 90%);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%);
+  & img {
+    width: 100%;
+  }
+}
+header {
+  padding: 0px 12px;
+}
+
+/* Headers */
+h1 {
+  font-family: Young-Serif;
+  font-weight: 400;
+  line-height: 32px;
+}
+h2 {
+  color: hsl(14, 45%, 36%);
+  font-weight: 400;
+  font-family: Young-Serif;
+}
+h3 {
+  font-family: Outfit;
+  color: hsl(332, 51%, 32%);
+}
+
+li,
+p,
+table {
+  font-family: Outfit;
+  color: hsl(30, 10%, 34%);
+}
+
+/* Lists */
+li {
+  margin-bottom: 7px;
+}
+ul {
+  padding: 0;
+  padding-left: 20px;
+  margin: 0;
+  list-style-type: none;
+
+  li {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+
+  div.marker {
+    width: 4px;
+    height: 4px;
+    background-color: hsl(30, 10%, 34%);
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+}
+ol {
+  padding: 0;
+  padding-left: 20px;
+  counter-reset: ingredients;
+  li {
+    display: flex;
+    gap: 25px;
+
+    &::before {
+      counter-increment: ingredients;
+      content: counter(ingredients) ".";
+      font-weight: 600;
+      color: hsl(332, 51%, 32%);
+    }
+  }
+}
+
+section {
+  padding: 0px 20px;
+}
+section#prep-time {
+  background-color: hsl(330, 100%, 98%);
+  border-radius: 10px;
+  padding: 5px 20px;
+  h3 {
+    padding-left: 10px;
+  }
+}
+
+/* Table Design */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table td {
+  border-bottom: solid thin hsl(30, 18%, 87%);
+  padding: 10px;
+  text-align: center;
+  /* The metrics */
+  &:nth-child(2) {
+    color: hsl(14, 45%, 36%);
+    font-weight: 800;
+  }
+}
+table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (width > 425.999px) {
+  body {
+    margin: 30px auto;
+  }
+  main {
+    max-width: 600px;
+    padding: 12px;
+  }
+}
